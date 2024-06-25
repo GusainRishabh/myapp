@@ -1,0 +1,251 @@
+#header {
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    background-color: rgb(53, 53, 128);
+    color: white;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#maindiv {
+    position: relative;
+    height: 2700px;
+    width: 100%;
+    background-color: rgb(191, 174, 174);
+    display: flex;
+    gap: 20px;
+}
+
+.d1 {
+    position: relative;
+    height: 800px;
+    width: 26%;
+    border: 2px solid black;
+    color: black;
+    margin-top: 150px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+li {
+    margin-top: 5px;
+    font-size: 30px;
+    color: black;
+}
+.laptop{
+    height: 200px;
+    width: 20%;
+    border: 2px solid black;
+    margin: 70px;
+    background-image: url(mac-removebg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+.mobile{
+    height: 200px;
+    width: 20%;
+    border: 2px solid black;
+    margin: 70px;
+    background-image: url(iph-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+
+}
+#lap{
+    position: relative;
+    font-size: x-large;
+    top: 210px;
+    font-weight: bolder;
+}
+
+#la1 {
+    position: relative;
+    height: 200px;
+    width: 60%;
+    background-image: url(mac.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#la2 {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    font-weight: bolder;
+    font: x-large;
+}
+
+#la3 {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.ar {
+    color: black;
+}
+
+.ta {
+    position: relative;
+    margin-left: 90px;
+}
+
+input {
+    position: relative;
+    width: 200px;
+    font-weight: bold;
+}
+
+.de {
+    position: relative;
+    height: 500px;
+    width: 40%;
+    border: 2px solid black;
+    margin-top: 170px;
+}
+
+.de1 {
+    position: relative;
+    height: 850px;
+    width: 100%;
+    border: 2px solid black;
+    float: right;
+    margin-top: 150px;
+
+}
+
+#option {
+    position: relative;
+    width: 200px;
+    border: 2px solid white;
+}
+
+td {
+    position: relative;
+    font-size: x-large;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    text-decoration: none;
+    margin-left: 20px;
+    color:white;
+}
+
+#ho {
+    margin-left: 780px;
+    font-size: x-large;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: -50px;
+    font-size: 20px;
+}
+
+h1 {
+    width: 190px;
+    margin-left: 50px;
+}
+
+#footer {
+    height: 380px;
+    width: 100%;
+    background-color: rgb(29, 29, 86);
+    display: flex;
+}
+
+#div1 {
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+
+#div2 {
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+
+#div3 {
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+
+#div4 {
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+
+#c {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size: x-large;
+    margin-top: 40px;
+    color: white;
+}
+
+#co {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size: x-large;
+    margin-top: 40px;
+    color: white;
+}
+
+#op {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size: x-large;
+    margin-top: 40px;
+    color: white;
+}
+
+#ne {
+    font-size: x-large;
+    color: white;
+    margin-top: 50px;
+}
+
+#fo {
+    font-size: large;
+    height: 40px;
+    width: 350px;
+    margin-top: 25px;
+    border-radius: 4px;
+}
+
+#sub {
+    background-color: rgb(71, 50, 162);
+    height: 40px;
+    width: 350px;
+    font-size: large;
+    border-radius: 3px;
+    color: black;
+    margin-left: 3px;
+}

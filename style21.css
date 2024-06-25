@@ -1,0 +1,131 @@
+#header{
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    background-color:rgb(29, 29, 86);
+    color: white;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+#maindiv{
+    position: relative;
+    height:1810px;
+    width: 100%;
+    background-color: rgb(191, 174, 174);
+    display: flex;
+    gap: 20px;
+}
+#show{
+    position: relative;
+    height: 500px;
+    width: 30%;
+    border: 3px solid black;
+    margin-top: 100px;
+}
+#show1{
+    position: relative;
+    height: 1700px;
+    width: 100%;
+    margin-top: 100px;
+    border: 3px solid black;
+}
+a{
+    text-decoration: none;
+    margin-left: 20px;
+    color:white;
+}
+a:hover{
+    text-decoration: none;
+    margin-left: 20px;
+    color: orange;
+}
+#ho{
+    margin-left: 780px;
+    font-size: xx-large;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: -50px;
+}
+h1{
+    width: 190px;
+    margin-left: 50px;
+}
+#footer{
+    height: 380px;
+    width: 100%;
+    background-color:rgb(29, 29, 86);
+    display:flex;
+}
+#div1{
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+#div2{
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+#div3{
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+#div4{
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+#c{
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size:x-large;
+    margin-top: 40px;
+    color: white;
+}
+#co{
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size:x-large;
+    margin-top: 40px;
+    color: white;
+}
+#op{
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size:x-large;
+    margin-top: 40px;
+    color: white;
+}
+#ne{
+    font-size: x-large;
+    color: white;
+    margin-top: 50px;
+}
+#fo{
+    font-size: large;
+    height: 40px;
+    width: 350px;
+    margin-top: 25px;
+    border-radius: 4px;
+}
+#sub{
+    background-color: rgb(71, 50, 162);
+    height: 40px;
+    width: 350px;
+    font-size: large;
+    border-radius: 3px;
+    color: black;
+    margin-left: 3px;
+}

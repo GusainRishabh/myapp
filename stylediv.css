@@ -1,0 +1,13 @@
+.main {
+    display: flex; /* Use flexbox to arrange items */
+    width: 100%; /* Set the width of the container */
+}
+
+.demo {
+    columns: 2;
+    width: 100%;
+    background-color: #f0f0f0; /* Set background color for each item */
+    padding: 10px; /* Add padding inside each item */
+    box-sizing: border-box; /* Include padding and border in the item's total width and height */
+    border: 1px solid #ccc; /* Add a border around each item */
+}
