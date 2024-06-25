@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</head>
+<body>
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+            <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Create Your Account</h2>
+            <form action="customer" method="post">
+                <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                    <div class="sm:col-span-2">
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> User Name</label>
+                        <input type="text" name="t1" id="t1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter your Name" required="">
+                    </div>
+                    <div class="w-full">
+                        <label for="userid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">UserId</label>
+                        <input type="text" name="t2" id="t2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="User Id" required="">
+                    </div>
+                    <div class="w-full">
+                        <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                        <input type="text" name="t3" id="t3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="LastName" required="">
+                    </div>
+                    <div class="w-full">
+                        <label for="Date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Of Birth</label>
+                        <input type="date" name="t4" id="t4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your Date Of Birth" required="">
+                    </div>
+                    <div class="w-full">
+                        <label for="Password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <input type="password" name="t5" id="t5" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Password" required="">
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label for="Address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                        <textarea id="t6" name="t6" rows="2.1" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your Address here"></textarea>
+                    </div>
+                    <div>
+                        <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State</label>
+                        <select id="t7" name="t7" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option>Uttarakhand</option>
+                            <option>Delhi</option>
+                            <option>Up</option>
+                            <option>Bihar</option>
+                            <option>Assam</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="Pincode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pin code</label>
+                        <input type="number" name="t8" id="t8" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Pincode" required="">
+                    </div> 
+                    
+                    <div class="sm:col-span-2">
+                        <label for="LandMark" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> City</label>
+                        <input type="text" name="t9" id="t9" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="LandMark" required="">
+                    </div>
+                </div>
+                <div class="w-full">
+                    <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+                    <input type="submit"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="Submit" required="">
+                </div>
+            </form>
+        </div>
+      </section>
+</body>
+</html>
