@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<script>
+function loaddiv()
+{
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {//code for IE7+,Firefox,Chrome,Opera,Safari
+    xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {//code for IE6,IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+  xmlhttp.onreadystatechange=function()
+    {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+       {
+        document.getElementById("mydiv1").innerHTML=xmlhttp.responseText;
+       }
+    }
+    xmlhttp.open("GET","my1.html",true);
+    xmlhttp.send();
+}
+
+function loaddiv1()
+{
+    var m=document.getElementById("t1").value;
+    var xmlhttp;
+   
+    if (window.XMLHttpRequest)
+    {//code for IE7+,Firefox,Chrome,Opera,Safari
+    xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {//code for IE6,IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+  xmlhttp.onreadystatechange=function()
+    {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+       {
+        document.getElementById("mydiv1").innerHTML=xmlhttp.responseText;
+       }
+    }
+    if(m=="uk")
+    {
+        xmlhttp.open("GET","uk.html",true); 
+        xmlhttp.send();
+    }
+    else if(m=="up")
+    {
+        xmlhttp.open("GET","up.html",true);
+        xmlhttp.send();
+    }
+    else{
+        xmlhttp.open("GET","blank.html",true);
+        xmlhttp.send(); 
+    }
+    
+}
+function show()
+{
+    document.write("welcome");
+}
+
+
+</script>
+<body>
+    <select id="t1" onchange="loaddiv1()">
+        <option>
+            select
+        </option>
+        <option>
+            uk
+        </option>
+        <option>
+            up
+        </option>
+    </select>
+    <div id="mydiv1"></div>   
+</body>
+</html>

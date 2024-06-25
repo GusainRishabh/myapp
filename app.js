@@ -10,23 +10,23 @@ const app = express();
 const router = express.Router();
 const server = http.createServer(app);
 const cookieParser = require("cookie-parser");
-var session = require('express-session')
+const sessions = require('express-session');
 const formidable = require('formidable');
 const fs = require('fs');
 // Correct order: require multer before using it
-const multer = require('multer');
-const sharp = require('sharp'); // Import sharp library
+//const multer = require('multer');
+//const upload = multer();
+
 
 // creating 24 hours from milliseconds
 const oneDay = 1000 * 60 * 60 * 24;
 //session middleware
-app.set('trust proxy', 1) // trust first proxy
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
+app.use(sessions({
+    secret: "thisismysecrctekey",
+    saveUninitialized: true,
+    cookie: { maxAge: oneDay },
+    resave: false
+}));
 
 app.use(cookieParser());
 
@@ -498,15 +498,12 @@ app.post('/customer', async (req, res) => {
         var a5 = req.body.t5;
         var a6 = req.body.t6;
         var a7 = req.body.t7;
-        var a8 = req.body.t8;
-        var a9 = req.body.t9;
-
 
         var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
         con.connect(function (err) {
             if (err) throw err;
             console.log("connected");
-            con.query("insert into customer values('" + a1 + "','" + a2 + "','" + a3 + "','" + a4 + "','" + a5 + "','" + a6 + "','" + a7 + "','" + a8 + "','" + a9 + "')", function (err, result) {
+            con.query("insert into customer values('" + a1 + "','" + a2 + "','" + a3 + "','" + a4 + "','" + a5 + "','" + a6 + "','" + a7 + "')", function (err, result) {
                 if (err) throw err;
                 console.log("sucessfull");
 
@@ -531,16 +528,13 @@ app.post('/updatecustomer', async (req, res) => {
         var a5 = req.body.t5;
         var a6 = req.body.t6;
         var a7 = req.body.t7;
-        var a8 = req.body.t8;
-        var a9 = req.body.t9;
-
 
         var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
         con.connect(function (err) {
             if (err) throw err;
             console.log("connected");
-            con.query("update customer set userName='" + a1 + "', LastName='" + a3 + "',DateofBirth='" + a4 + "', Password='" + a5 + "', Address='" + a6 + "', State='" + a7 + "',pincode='" + a8 + "',LandMark='" + a9 + "' where UserId='" + a2 + "'", function (err, result) {
-                res.writeHead(301, { Location: "http://localhost:3000/indexnew.html" });
+            con.query("update customer set userName='" + a1 + "', LastName='" + a3 + "',DateofBirth='" + a4 + "', Password='" + a5 + "', Address='" + a6 + "', State='" + a7 + "' where UserId='" + a2 + "'", function (err, result) {
+                res.writeHead(301, { Location: "http://localhost:3000/customerlogin.html" });
                 res.end();
                 console.log("Sucessfull");
             });
@@ -972,33 +966,34 @@ app.post('/searchdata', async (req, res) => {
     try {
         var t1 = req.body.t1;
         var t2 = req.body.c1;
-        let x = "";
+        let x="";
         var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
         con.connect(function (err) {
             if (err) throw err;
             console.log("connected");
             con.query("select * from computer where salesPacage='" + t1 + "'", function (err, result) {
                 const fs = require('fs');
-                //result=result+t2;
-                //t2="userId:'"+t2+"'";
-                console.log(result);
-
-
-                // console.log(t2);
+                 //result=result+t2;
+                 //t2="userId:'"+t2+"'";
+                 console.log(result);
+                 
+                 
+               // console.log(t2);
                 console.log(x);
 
                 //console.log(result)
                 // Convert JSON data to a string
                 const jsonString = JSON.stringify(result);
-                for (i = 0; i < jsonString.length - 2; i++) {
-                    x = x + jsonString[i];
-                }
+                for(i=0;i< jsonString.length-2;i++)
+                    {
+                        x=x+jsonString[i];
+                    }
                 // Convert JSON data toa string
                 let user = req.session.user;
-                x = x + ",";
-                x = x + "\"UserId\"";
-                x = x + ":";
-                x = x + "\"" + t2 + "\"" + "}]";
+                x=x+",";
+                x=x+"\"UserId\"";
+                x=x+":";
+                x=x+"\""+t2+"\""+"}]";
 
                 // File path where you want to save the JSON data
                 const filePath = 'public/searchdata.json';
@@ -1011,7 +1006,7 @@ app.post('/searchdata', async (req, res) => {
                     }
                     console.log('JSON data has been saved to', filePath);
                 });
-
+               
 
 
                 if (result.length > 0) {
@@ -1078,8 +1073,6 @@ app.post('/addcart', async (req, res) => {
         var a39 = req.body.t39;
         var a40 = req.body.t40;
         var a41 = req.body.t41;
-        var a42 = req.body.t42;
-
 
 
 
@@ -1087,7 +1080,7 @@ app.post('/addcart', async (req, res) => {
         con.connect(function (err) {
             if (err) throw err;
             console.log("connected");
-            con.query("insert into cartsec values('" + a1 + "','" + a2 + "','" + a3 + "','" + a4 + "','" + a5 + "','" + a6 + "','" + a7 + "','" + a8 + "','" + a9 + "','" + a10 + "','" + a11 + "','" + a12 + "','" + a13 + "','" + a14 + "','" + a15 + "','" + a16 + "','" + a17 + "','" + a18 + "','" + a19 + "','" + a20 + "','" + a21 + "','" + a22 + "','" + a23 + "','" + a24 + "','" + a25 + "','" + a26 + "','" + a27 + "','" + a28 + "','" + a29 + "','" + a30 + "','" + a31 + "','" + a32 + "','" + a33 + "','" + a34 + "','" + a35 + "','" + a36 + "','" + a37 + "','" + a38 + "','" + a39 + "','" + a40 + "','" + a41 + "','" + a42 + "')", function (err, result) {
+            con.query("insert into cartsec values('" + a1 + "','" + a2 + "','" + a3 + "','" + a4 + "','" + a5 + "','" + a6 + "','" + a7 + "','" + a8 + "','" + a9 + "','" + a10 + "','" + a11 + "','" + a12 + "','" + a13 + "','" + a14 + "','" + a15 + "','" + a16 + "','" + a17 + "','" + a18 + "','" + a19 + "','" + a20 + "','" + a21 + "','" + a22 + "','" + a23 + "','" + a24 + "','" + a25 + "','" + a26 + "','" + a27 + "','" + a28 + "','" + a29 + "','" + a30 + "','" + a31 + "','" + a32 + "','" + a33 + "','" + a34 + "','" + a35 + "','" + a36 + "','" + a37 + "','" + a38 + "','" + a39 + "','" + a40 + "','" + a41 + "')",function (err, result) {
                 if (err) throw err;
                 console.log("sucessfull");
                 res.writeHead(301, { Location: "http://localhost:3000/sucessfullmassageaddcarr.html" });
@@ -1104,197 +1097,28 @@ app.post('/addcart', async (req, res) => {
 
 /////
 
+
+
+
+
+
+
 app.post('/myorder', async (req, res) => {
     try {
-        var a1 = req.body.t2;
-        var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
-        con.connect(function (err) {
-            if (err) throw err;
-            console.log("connected");
-            con.query("select * from cartsec where userId='" + a1 + "'", function (err, result) {
-                const fs = require('fs');
-
-                // Convert JSON data to a string
-                let user = req.session.user;
-
-
-                let jsonString = JSON.stringify(result);
-
-
-                // File path where you want to save the JSON data
-                const filePath = 'public/myorder.json';
-
-                // Write the JSON string to the file
-                fs.writeFile(filePath, jsonString, 'utf8', (err) => {
-                    if (err) {
-                        console.error('Error writing file:', err);
-                        return;
-                    }
-                    console.log('JSON data has been saved to', filePath);
-                });
-
-
-                console.log("sucessfull");
-                res.writeHead(301, { Location: "http://localhost:3000/myorder.html" });
-                res.end();
-                console.log("Sucessfull");
-            });
-        });
-        //data base code end
-    } catch {
-        res.send("Internal server error");
-    }
-});
-
-
-//// venderorder
-
-
-
-app.post('/venderorder', async (req, res) => {
-    try {
-        var a1 = req.body.c2;
-        var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
-        con.connect(function (err) {
-            if (err) throw err;
-            console.log("connected");
-            con.query("select * from cartsec where CompanyName='" + a1 + "'", function (err, result) {
-                const fs = require('fs');
-
-                // Convert JSON data to a string
-                let user = req.session.user;
-
-
-                let jsonString = JSON.stringify(result);
-
-
-                // File path where you want to save the JSON data
-                const filePath = 'public/venderorder.json';
-
-                // Write the JSON string to the file
-                fs.writeFile(filePath, jsonString, 'utf8', (err) => {
-                    if (err) {
-                        console.error('Error writing file:', err);
-                        return;
-                    }
-                    console.log('JSON data has been saved to', filePath);
-                });
-
-
-                console.log("sucessfull");
-                res.writeHead(301, { Location: "http://localhost:3000/venderoderlist.html" });
-                res.end();
-                console.log("Sucessfull");
-            });
-        });
-        //data base code end
-    } catch {
-        res.send("Internal server error");
-    }
-});
-
-
-
-
-
-
-/// json of viewdetails
-app.post('/updatestatus', async (req, res) => {
-    try {
         var a1 = req.body.t1;
-        
         var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
         con.connect(function (err) {
             if (err) throw err;
             console.log("connected");
-            
-            con.query("select * from cartsec where Seried='" + a1 + "'", function (err, result) {
-                const fs = require('fs');
-               
-
-                // Convert JSON data to a string
-                let user = req.session.user;
-
-
-                let jsonString = JSON.stringify(result);
-
-
-                // File path where you want to save the JSON data
-                const filePath = 'public/updatestatus.json';
-
-                // Write the JSON string to the file
-                fs.writeFile(filePath, jsonString, 'utf8', (err) => {
-                    if (err) {
-                        console.error('Error writing file:', err);
-                        return;
-                    }
-                    console.log('JSON data has been saved to', filePath);
-                });
-
-
-                console.log("sucessfull");
-                res.writeHead(301, { Location: "http://localhost:3000/venderorderfulldetails.html" });
-                res.end();
-                console.log("Sucessfull");
-                
-            });
-        });
-        //data base code end
-    } catch {
-        res.send("Internal server error");
-    }
-});
-//// update code
-
-app.post('/statusupdate', async (req, res) => {
-    try {
-        //Data bse code start
-        var a1 = req.body.t42;
-        var a2 = req.body.t4;
-
-
-        var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
-        con.connect(function (err) {
-            if (err) throw err;
-            console.log("connected");
-            con.query("update cartsec set status='" + a1 + "' where Seried='" + a2 + "'", function (err, result) {
+            con.query("select * from cartsec where userId='" + a1 + "'",  function (err, result) {
                 if (err) throw err;
-                console.log("sucessfull");
-
-            });
-        });
-        //data base code end
-        res.send("<div align='center'><h2>Sucessfull Regester</h2></div><br><br><div align='center'><a href='./login.html'>login</a></div><br><br><div align='center'><a href='./registration.html'>Register another user</a></div>");
-    } catch {
-        res.send("Internal server error");
-    }
-});
-
-
-
-
-// order status
-
-
-app.post('/vieworderstatus', async (req, res) => {
-    try {
-        var a1 = req.body.t1;
-        var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
-        con.connect(function (err) {
-            if (err) throw err;
-            console.log("connected");
-            con.query("select * from cartsec where status='" + a1 + "'", function (err, result) {
                 const fs = require('fs');
 
                 // Convert JSON data to a string
-                let user = req.session.user;
-
-
-                let jsonString = JSON.stringify(result);
-
+                const jsonString = JSON.stringify(result);
 
                 // File path where you want to save the JSON data
-                const filePath = 'public/myorderstatus.json';
+                const filePath = 'public/myorders.json';
 
                 // Write the JSON string to the file
                 fs.writeFile(filePath, jsonString, 'utf8', (err) => {
@@ -1303,108 +1127,9 @@ app.post('/vieworderstatus', async (req, res) => {
                         return;
                     }
                     console.log('JSON data has been saved to', filePath);
+
                 });
-
-
-                console.log("sucessfull");
-                res.writeHead(301, { Location: "http://localhost:3000/myorderstatus.html" });
-                res.end();
                 console.log("Sucessfull");
-            });
-            
-        });
-        //data base code end
-    } catch {
-        res.send("Internal server error");
-    }
-});
-
-//// view details fro customer
-
-
-app.post('/orderstatusbycustomer', async (req, res) => {
-    try {
-        var a1 = req.body.t1;
-        var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
-        con.connect(function (err) {
-            if (err) throw err;
-            console.log("connected");
-            con.query("select * from cartsec where status='" + a1 + "'", function (err, result) {
-                const fs = require('fs');
-
-                // Convert JSON data to a string
-                let user = req.session.user;
-
-
-                let jsonString = JSON.stringify(result);
-
-
-                // File path where you want to save the JSON data
-                const filePath = 'public/myorderstatus.json';
-
-                // Write the JSON string to the file
-                fs.writeFile(filePath, jsonString, 'utf8', (err) => {
-                    if (err) {
-                        console.error('Error writing file:', err);
-                        return;
-                    }
-                    console.log('JSON data has been saved to', filePath);
-                });
-
-
-                console.log("sucessfull");
-                res.writeHead(301, { Location: "http://localhost:3000/myorderstatus.html" });
-                res.end();
-                console.log("Sucessfull");
-            });
-            
-        });
-        //data base code end
-    } catch {
-        res.send("Internal server error");
-    }
-});
-
-
-
-app.post('/viewdetail', async (req, res) => {
-    try {
-        var a1 = req.body.t1;
-        
-        var con = mysql.createConnection({ host: "localhost", user: "root", password: "root", database: "computer" });
-        con.connect(function (err) {
-            if (err) throw err;
-            console.log("connected");
-            
-            con.query("select * from cartsec where Seried='" + a1 + "'", function (err, result) {
-                const fs = require('fs');
-               
-
-                // Convert JSON data to a string
-                let user = req.session.user;
-
-
-                let jsonString = JSON.stringify(result);
-
-
-                // File path where you want to save the JSON data
-                const filePath = 'public/viewmore.json';
-
-                // Write the JSON string to the file
-                fs.writeFile(filePath, jsonString, 'utf8', (err) => {
-                    if (err) {
-                        console.error('Error writing file:', err);
-                        return;
-                    }
-                    console.log('JSON data has been saved to', filePath);
-                });
-
-
-                console.log("sucessfull");
-                res.writeHead(301, { Location: "http://localhost:3000/viewmoredetail.html" });
-                res.end();
-                console.log("Sucessfull");
-                
             });
         });
         //data base code end
@@ -1412,43 +1137,6 @@ app.post('/viewdetail', async (req, res) => {
         res.send("Internal server error");
     }
 });
-
-
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'C:/Users/ACER/mynodejs/Image') // Uploads directory
-    },
-    filename: function (req, file, cb) {
-      // Save the file with its original name
-      cb(null, file.originalname)
-    }
-  })
-  
-  const upload = multer({ storage: storage })
-  
-  // Route for file upload
-  app.post('/upload', upload.single('image'), (req, res) => {
-    // Convert the uploaded image to JPG format
-    const inputPath = path.join(__dirname, 'Image', req.file.filename);
-    const outputPath = path.join(__dirname, 'uploads', `${path.parse(req.file.filename).name}.jpg`);
-    
-    sharp(inputPath)
-      .toFormat('jpeg')
-      .toFile(outputPath, (err, info) => {
-        if (err) {
-          console.error(err);
-          res.status(500).send('Error converting file format');
-        } else {
-          console.log('Image converted to JPEG successfully');
-          res.send('File uploaded and converted to JPG successfully');
-        }
-      });
-  });
-  
-
-
-
 
 
 server.listen(3000, function () {

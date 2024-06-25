@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//ajax.googleapis.com/ajay/libs/jquery/1.9.1/jquery.min.js"></script> 
+     <!-- Latest compiled and minified CSS -->
+</head>
+<script>
+    $(document).ready(function(){
+        $("#btnl").click(function(){
+            $("p").append("<b>Append text</b>.");
+        });
+        
+        $("#btn2").click(function(){
+            $("ol").append("<li>Append item</li>");
+        })
+    });
+</script>
+<body>
+    <p>
+        This is paragraph
+    </p>
+    <p>
+        This is anothe paragraph
+    </p>
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+    </ol>
+    <button id="btn1">Append text</button>
+    <button id="btn2">Append list items</button>
+
+</body>
+</html>

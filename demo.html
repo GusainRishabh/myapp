@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function search() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    const item = xhttp.responseText;
+                    const data = JSON.parse(item);
+                    text = "<table border='2'>"
+                    for (let x in data) {
+
+                        text += "<tr><td>" + data[x].salesPacage + "</td></tr>";
+                    }
+                    text += "</table>"
+                    document.getElementById("t1").innerHTML = text;
+                }
+            }
+
+            xhttp.open("GET", "searchdata.json", true);
+
+            xhttp.send();
+        }
+    </script>
+</head>
+<body onload="search()">
+    <div style="height: 300px; width: 200px; border: 2px solid black;" id="t1"></div>
+</body>
+</html>

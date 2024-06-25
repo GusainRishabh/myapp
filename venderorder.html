@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?familleft: 20px;top:20px;font-size: larger;y=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="stylenew.css">
+    <title>Index page</title>
+    <script>
+        function venderorder() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    const item = xhttp.responseText;
+                    const data = JSON.parse(item);
+                    text = "";
+                    for (let x in data) 
+                    {
+                        text = text + "<hr><div style='height: auto; left; background-color:white;width: 100%;display:flex;'>    <hr>    <div        style='float: left; height: auto; width: 20%; background-color:white;background-image: url(mac.jpg);background-size:contain;background-repeat: no-repeat;size: full;object-fit: contain; '></div><hr><div style='width: 100%; height: auto;'<tr><h1>salesPacage</h1><table style='width: 100%; border: 2px solid black; font-size: 1rem; '><tr><td>" + data[x].salesPacage + "</td><td>" + data[x].MOdelNumber + "</td><td>" + data[x].PartPacage + "</td></tr><tr><td>" + data[x].Seried + "</td><td>" + data[x].Color + "</td><td>" + data[x].Type + "</td></tr><tr><td>" + data[x].SuitableFor + "</td><td>" + data[x].BatteryCell + "</td><td>" + data[x].Msoffice + "</td></tr><tr><td>" + data[x].ProcessorAndMemoryFeatures + "</td><td>" + data[x].Dedicategraphicmemory + "</td><td>" + data[x].DedicatememoryCapacity + "</td></tr><tr><td>" + data[x].processorBrand + "</td><td>" + data[x].processorName + "</td><td>" + data[x].ProcessorGen + "</td></tr><tr><td>" + data[x].Ssd + "</td><td>" + data[x].SsdType + "</td><td>" + data[x].Ram + "</td></tr><tr><td>" + data[x].RamType + "</td><td>" + data[x].ProcesserVariant + "</td><td>" + data[x].ClockSpeed + "</td></tr><tr><td>" + data[x].MemorySlots + "</td><td>" + data[x].Expandablememory + "</td><td>" + data[x].graphicProcesser + "</td></tr><tr><td>" + data[x].OsArchitecture + "</td><td>" + data[x].OperatingSystem + "</td><td>" + data[x].SupportedOperatingSystem + "</td></tr><tr><td>" + data[x].SystemArchitech + "</td><td>" + data[x].TouchScreen + "</td><td>" + data[x].ScreenSize + "</td></tr><tr><td>" + data[x].ScreenResolution + "</td><td>" + data[x].ScreenType + "</td><td>" + data[x].RefreshRate + "</td></tr><tr><td>" + data[x].WireLessLAN + "</td><td>" + data[x].Bluetooth + "</td><td>" + data[x].Dimensitons + "</td></tr><tr><td>" + data[x].Weight + "</td><td>" + data[x].ProductPrice + "</td><td>" + data[x].ProductCode + "</td></tr><td></td><td></td><td>" + data[x].CompanyName + "</td><td></td></table></div><hr></div><hr>"
+                    }
+
+                    document.getElementById("mydiv").innerHTML = text;
+                    document.getElementById("t1").value = data[0].salesPacage;
+                    document.getElementById("t2").value = data[0].MOdelNumber;
+                    document.getElementById("t3").value = data[0].PartPacage;
+                    document.getElementById("t4").value = data[0].Seried;
+                    document.getElementById("t5").value = data[0].Color;
+                    document.getElementById("t6").value = data[0].Type;
+                    document.getElementById("t7").value = data[0].SuitableFor;
+                    document.getElementById("t8").value = data[0].BatteryCell;
+                    document.getElementById("t9").value = data[0].Msoffice;
+                    document.getElementById("t10").value = data[0].ProcessorAndMemoryFeatures;
+                    document.getElementById("t11").value = data[0].Dedicategraphicmemory;
+                    document.getElementById("t12").value = data[0].DedicatememoryCapacity;
+                    document.getElementById("t13").value = data[0].processorBrand;
+                    document.getElementById("t14").value = data[0].processorName;
+                    document.getElementById("t15").value = data[0].ProcessorGen;
+                    document.getElementById("t16").value = data[0].Ssd;
+                    document.getElementById("t17").value = data[0].SsdType;
+                    document.getElementById("t18").value = data[0].Ram;
+                    document.getElementById("t19").value = data[0].RamType;
+                    document.getElementById("t20").value = data[0].ProcesserVariant;
+                    document.getElementById("t21").value = data[0].ClockSpeed;
+                    document.getElementById("t22").value = data[0].MemorySlots;
+                    document.getElementById("t23").value = data[0].Expandablememory;
+                    document.getElementById("t24").value = data[0].graphicProcesser;
+                    document.getElementById("t25").value = data[0].OsArchitecture;
+                    document.getElementById("t26").value = data[0].OperatingSystem;
+                    document.getElementById("t27").value = data[0].SupportedOperatingSystem;
+                    document.getElementById("t28").value = data[0].SystemArchitech;
+                    document.getElementById("t29").value = data[0].TouchScreen;
+                    document.getElementById("t30").value = data[0].ScreenSize;
+                    document.getElementById("t31").value = data[0].ScreenResolution;
+                    document.getElementById("t32").value = data[0].ScreenType;
+                    document.getElementById("t33").value = data[0].RefreshRate;
+                    document.getElementById("t34").value = data[0].WireLessLAN;
+                    document.getElementById("t35").value = data[0].Bluetooth;
+                    document.getElementById("t36").value = data[0].Dimensitons;
+                    document.getElementById("t37").value = data[0].Weight;
+                    document.getElementById("t38").value = data[0].ProductPrice;
+                    document.getElementById("t39").value = data[0].ProductCode;
+                    document.getElementById("t40").value = data[0].CompanyName;
+                    document.getElementById("t41").value = data[0].UserId;
+                    document.getElementById("t42").value = data[0].UserId;
+                }
+            }
+
+            xhttp.open("GET", "venderorder.json", true);
+
+            xhttp.send();
+        }
+    </script>
+</head>
+
+<body onload="venderorder()">
+
+    <nav>
+        <div class="left">
+
+            </form>
+            <div class="logo">
+                <img src="rs.png" style="border-radius: 9px;">
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="vender.html">Vender_Regration</a>
+                <a href="specficationinsert.html">specficationinsert</a>
+                <a href="loginformuser.html">User_Login</a>
+                <a href="#">Contact Us</a>
+                <a href="search.html">Searchdata</a>
+
+                <h1>
+                    <pre id="greeting" style=" margin-left: 20px;"></pre>
+                </h1>
+            </div>
+        </div>
+        <div class="buttons">
+            
+            </form>
+            <a href="#"><i class='bx bx-support'></i></a>
+            <a href="#"><i class='bx bx-basket'></i></a>
+            <a href="#"><i class='bx bx-user'></i></a>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="left1">
+        </div>
+        <div id="mydiv" style="width: 100%;"></div>
+        
+    </div>
+    <div id="footer">
+        <div id="div1">Company
+            <span id="c">
+                <li><a href="#" id="c">About Us</a></li>
+                <li><a href="#" id="c">Contact</a></li>
+                <li><a href="#" id="c">Reservation</a></li>
+                <li><a href="#" id="c">Terms & Condation</a>
+                </li>
+        </div>
+        <div id="div2">Contact
+            <span id="co">
+                <li>123 Street, New York, USA</li>
+                <li>+012 345 67890</li>
+                <li>info@example.com</li>
+            </span>
+        </div>
+        <div id="div3">Opening
+            <span id="op">
+                <li>Monday - Saturday</li>
+                <li>09AM - 09PM</li>
+                <li>Sunday</li>
+                <li>10AM - 08PM</li>
+            </span>
+        </div>
+        <div id="div4">Newsletter
+            <span id="ne"><br>Dolor amet sit justo amet elitr clita ipsum elitr est.</span>
+            <br>
+            <input type="email" placeholder="Enter the Email" id="fo">
+            <input type="submit" id="sub">
+        </div>
+   
+</body>
+
+</html>

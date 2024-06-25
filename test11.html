@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sand BOX</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        function view() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    const item = xhttp.responseText;
+                    const data = JSON.parse(item);
+                    text = "";
+                    for (let x in data) {
+                        text = text + "<main class='container mx-auto p-4'><div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'><div class='bg-white p-4 rounded shadow'><img src='https://rukminim2.flixcart.com/image/612/612/xif0q/gamingconsole/5/n/u/-original-imaghyykrhvewh4y.jpeg?q=70' alt='Product 1'class='w-full h-48 object-cover rounded mb-4'><h2 class='text-lg font-bold mb-2'>Product 1</h2><p class='text-gray-700 mb-2'>$20.00</p><a href='#'class='bg-blue-500 text-white py-2 px-4 rounded'>Add to Cart</a></div></div></main > "
+                    }
+
+                    document.getElementById("mydiv").innerHTML = text;
+                }
+            }
+
+            xhttp.open("GET", "myorder.json", true);
+
+            xhttp.send();
+        }
+    </script>
+</head>
+
+<body onload="view()">
+    <header class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="text-xl font-bold">
+                RS TECH
+            </div>
+            <div class="flex-grow flex justify-center">
+                <div class="relative w-full max-w-lg">
+                    <form action="/searchdata" method="post">
+                        <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-md text-gray-800"
+                            id="t1" name="t1">
+                        <button
+                            class="absolute right-0 top-0 h-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-md">
+
+                            <input type="submit" style="color: black; background-color: transparent;">
+                        </button>
+                </div>
+            </div>
+            <div class="flex space-x-4">
+                <a href="customer.html" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Create Account
+                </a>
+                <a href="indexnew.html" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Login
+                </a>
+                <a href="vender.html" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Vendor create
+                </a>
+                <a href="venderlogin.html" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Vendor Login
+                </a>
+
+
+            </div>
+    </header>
+    <nav class="bg-gray-700 text-white py-2">
+        <div class="container mx-auto flex justify-center space-x-4">
+            <a href="#" class="hover:text-gray-400">Home</a>
+            <a href="#" class="hover:text-gray-400">Electronics</a>
+            <a href="#" class="hover:text-gray-400">Fashion</a>
+            <a href="#" class="hover:text-gray-400">Appliances</a>
+            <a href="#" class="hover:text-gray-400">Books</a>
+            <a href="#" class="hover:text-gray-400">More</a>
+        </div>
+    </nav>
+    <div id="mydiv"></div>
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <div class="mb-4 md:mb-0">© 2024 Your Website. All rights reserved.</div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-400">Terms of Service</a>
+                <a href="#" class="hover:text-gray-400">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

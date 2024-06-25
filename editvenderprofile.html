@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dash.css">
+    <title>Vender After Login</title>
+    <script>
+        function venderlogin() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    const item = xhttp.responseText;
+                    const data = JSON.parse(item);
+                    document.getElementById("c1").innerHTML=data[0].CompanyName
+                    document.getElementById("t1").value=data[0].CompanyName
+                    document.getElementById("t2").value=data[0].TypeOfFirm
+                    document.getElementById("t3").value=data[0].Country
+                    document.getElementById("t4").value=data[0].GST
+                    document.getElementById("t5").value=data[0].StatusOfCompany
+                    document.getElementById("t6").value=data[0].PanNo
+                    document.getElementById("t7").value=data[0].SinNo
+                    document.getElementById("t8").value=data[0].DinNo
+                    document.getElementById("t9").value=data[0].DinN02
+                    document.getElementById("t10").value=data[0].Address
+                    document.getElementById("t11").value=data[0].City
+                    document.getElementById("t12").value=data[0].State
+                    document.getElementById("t13").value=data[0].pin
+                    document.getElementById("t14").value=data[0].StdWithNo
+                    document.getElementById("t15").value=data[0].Fax
+                    document.getElementById("t16").value=data[0].Website
+                    document.getElementById("t17").value=data[0].Mobile
+                    document.getElementById("t18").value=data[0].NameOfContactPerson
+                    document.getElementById("t19").value=data[0].DesignationOfContactPerson
+                    document.getElementById("t20").value=data[0].IsYourFirm
+                    document.getElementById("t21").value=data[0].BriefDescriptionOfBusness
+
+                }
+            }
+            xhttp.open("GET", "vender.json" ,true);
+            
+            xhttp.send();
+        }
+    </script>
+
+</head>
+
+<body onload="venderlogin()">
+
+    <nav>
+        <div class="left">
+            <div class="logo">
+                <img src="rs.png" style="border-radius: 9px;">
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="vender.html">Vender_Regration</a>
+                <a href="specficationinsert.html">specficationinsert</a>
+                <a href="loginformuser.html">User_Login</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="#"><i class='bx bx-support'></i></a>
+            <a href="#"><i class='bx bx-basket'></i></a>
+            <a href="#"><i class='bx bx-user'></i></a>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="left1">
+            <div class="ad">
+                <div class="ad1">
+                    <a href="#"><i class='bx bx-home' style="margin-left: 20px;">Admin</i></a>
+                    <a href="#"><i class='bx bx-menu' style="float: right; margin-left: -20px;"></i></a>
+                </div>
+                <div class="ad2">
+                    <img src="rs.png" class="png">
+
+
+
+
+
+
+
+                    <!---------------------
+                    
+                    
+                    
+                    -->
+
+
+                    <div id="c1" class="rish">
+
+                    </div>
+
+
+
+                    <!---------------------
+                    
+                    
+                    
+                    -->
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="po">
+                <a href="#"><i class='bx bxs-dashboard'> Edit profile</i></a>
+                <br>
+                <br>
+                <a href="addphonespection.html"><i class='bx bx-home'> Add Mobile Data</i></a>
+                <br>
+                <br>
+                <a href="updatemobile.html"><i class='bx bx-menu'> Update Mobile Data</i></a>
+                <br>
+                <br>
+                <a href="specficationinsert.html"> <i class='bx bxs-key'></i> Add Computer Data</a>
+                <br>
+                <br>
+                <a href="updatespecation.html"> <i class='bx bxs-help-circle'> Update Computer Data</i></a>
+                <br>
+                <br>
+                <a href="venderlogin.html" onclick=""> <i class='bx bx-log-out'></i> Log Out</i></a>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="right1">
+            <div class="rig">
+                <form action="/updatevenderdetails" method="post">
+                <table>
+                    <tr>
+                        <td>CompanyName</td>
+                        <td><input type="text" name="t1" id="t1" ></td>
+                        <td>TypeOfFirm</td>
+                        <td><input type="text" name="t2" id="t2" ></td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td><input type="text" name="t3" id="t3" ></td>
+                        <td>GST</td>
+                        <td><input type="text" name="t4" id="t4" ></td>
+                    </tr>
+                    <tr>
+                        <td>StatusOfCompany</td>
+                        <td><input type="text" name="t5" id="t5" ></td>
+                        <td>PanNo</td>
+                        <td><input type="text" name="t6" id="t6" ></td>
+                    </tr>
+                    <tr>
+                        <td>SinNo</td>
+                        <td><input type="text" name="t7" id="t7" ></td>
+                        <td>DinNo</td>
+                        <td><input type="text" name="t8" id="t8" ></td>
+                    </tr>
+                    <tr>
+                        <td>DinN02</td>
+                        <td><input type="text" name="t9" id="t9" ></td>
+                        <td>Address</td>
+                        <td><input type="text" name="t10" id="t10" ></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td><input type="text" name="t11" id="t11" ></td>
+                        <td>State</td>
+                        <td><input type="text" name="t12" id="t12" ></td>
+                    </tr>
+                    <tr>
+                        <td>pin</td>
+                        <td><input type="text" name="t13" id="t13" ></td>
+                        <td>StdWithNo</td>
+                        <td><input type="text" name="t14" id="t14" ></td>
+                    </tr>
+                    <tr>
+                        <td>Fax</td>
+                        <td><input type="text" name="t15" id="t15" ></td>
+                        <td>Website</td>
+                        <td><input type="text" name="t16" id="t16" ></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile</td>
+                        <td><input type="text" name="t17" id="t17" ></td>
+                        <td>NameOfContactPerson</td>
+                        <td><input type="text" name="t18" id="t18" ></td>
+                    </tr>
+                    <tr>
+                        <td>DesignationOfContactPerson</td>
+                        <td><input type="text" name="t19" id="t19" ></td>
+                        <td>IsYourFirm</td>
+                        <td><input type="text" name="t20" id="t20" ></td>
+                    </tr>
+                    <tr>
+                        <td>BriefDescriptionOfBusness</td>
+                        <td><input type="text" name="t21" id="t21" ></td>
+                        <td>
+                            <input type="submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="div1">Company
+            <span id="c">
+                <li><a href="#" id="c">About Us</a></li>
+                <li><a href="#" id="c">Contact</a></li>
+                <li><a href="#" id="c">Reservation</a></li>
+                <li><a href="#" id="c">Terms & Condition</a></li>
+            </span>
+        </div>
+        <div id="div2">Contact
+            <span id="co">
+                <li>123 Street, New York, USA</li>
+                <li>+012 345 67890</li>
+                <li>info@example.com</li>
+            </span>
+        </div>
+        <div id="div3">Opening
+            <span id="op">
+                <li>Monday - Saturday</li>
+                <li>09AM - 09PM</li>
+                <li>Sunday</li>
+                <li>10AM - 08PM</li>
+            </span>
+        </div>
+        <div id="div4">Newsletter
+            <span id="ne"><br>Dolor amet sit justo amet elitr clita ipsum elitr est.</span>
+            <br>
+            <input type="email" placeholder="Enter the Email" id="fo">
+            <input type="submit" id="sub">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="stylenew.css">
+    <title>Index page</title>
+    <script>
+        function view() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    const item = xhttp.responseText;
+                    const data = JSON.parse(item);
+                    text = "<table>"
+                        text +="<th>salesPacage</th><th>MOdelNumber</th><th>PartPacage</th><th>Seried</th><th>Color</th><th>Type</th><th>SuitableFor</th><th>BatteryCell</th><th>ProductCode</th>"
+                    for (let x in data) {
+
+                        text += "<tr><td>" + data[x].salesPacage + "</td><td>" + data[x].MOdelNumber + "</td><td>" + data[x].PartPacage + "</td><td>" + data[x].Seried + "</td><td>" + data[x].Color + "</td><td>" + data[x].Type + "</td><td>" + data[x].SuitableFor + "</td><td>" + data[x].BatteryCell + "</td><td>" + data[x].ProductCode + "</td></tr>";
+                    }
+                    text += "</table>"
+                    document.getElementById("demo").innerHTML = text;
+                }
+            }
+
+            xhttp.open("GET", "computer.json", true);
+
+            xhttp.send();
+        }
+    </script>
+</head>
+
+<body onload="view()">
+
+    <nav>
+        <div class="left">
+            <div class="logo">
+                <img src="rs.png" style="border-radius: 9px;">
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="vender.html">Vender_Regration</a>
+                <a href="specficationinsert.html">specficationinsert</a>
+                <a href="loginformuser.html">User_Login</a>
+                <a href="#">Contact Us</a>
+                <h1>
+                    <pre id="greeting" style=" margin-left: 20px;"></pre>
+                </h1>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="#"><i class='bx bx-support'></i></a>
+            <a href="#"><i class='bx bx-basket'></i></a>
+            <a href="#"><i class='bx bx-user'></i></a>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="left1">
+            <a href="#"><i class='bx bx-devices'> Mobile</i></a>
+            <br>
+            <br>
+            <a href="#"><i class='bx bx-laptop'></i> Laptop</i></a>
+            <br>
+            <br>
+            <a href="#"><i class='bx bx-store'></i> Store</i></a>
+            <br>
+            <br>
+            <a href="#"> <i class='bx bx-user'></i> My Profile</a>
+            <br>
+            <br>
+            <a href="#"> <i class='bx bxs-help-circle'> Help Circle</i></a>
+            <br>
+            <br>
+            <a href="#" onclick=""> <i class='bx bx-log-out'></i> Log Out</i></a>
+            <br>
+            <br>
+        </div>
+        <div class="view">
+            <div class="view1">
+                <img src="mac-removebg.png"
+                    style="height: 200px; width: auto; display: flex; position: relative; top: 25%;">
+
+            </div>
+            <div class="view2" id="demo">
+                <!-- <table>
+                    <tr>
+                        <td>salesPacage</td>
+                        <td id="t1"></td>
+                    </tr>
+                    <tr>
+                        <td>MOdelNumber</td>
+                        <td id="t2"></td>
+                    </tr>
+                    <tr>
+                        <td>PartPacage</td>
+                        <td id="t3"></td>
+                    </tr>
+                    <tr>
+                        <td>Seried</td>
+                        <td id="t4"></td>
+                    </tr>
+                    <tr>
+                        <td>Color</td>
+                        <td id="t5"></td>
+                    </tr>
+                    <tr>
+                        <td>ProductPrice</td>
+                        <td id="t6"></td>
+                    </tr>
+                    <tr>
+                        <td>ProductCode</td>
+                        <td id="t7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="view2">
+                <table>
+                    <tr>
+                        <td>Type</td>
+                        <td id="t8"></td>
+                    </tr>
+                    <tr>
+                        <td>SuitableFor</td>
+                        <td id="t9"></td>
+                    </tr>
+                    <tr>
+                        <td>BatteryCell</td>
+                        <td id="t10"></td>
+                    </tr>
+                    <tr>
+                        <td>Msoffice</td>
+                        <td id="t11"></td>
+                    </tr>
+                    <tr>
+                        <td>ProcessorAndMemoryFeatures</td>
+                        <td id="t12"></td>
+                    </tr>
+                    <tr>
+                        <td>Dedicategraphicmemory</td>
+                        <td id="t13"></td>
+                    </tr>
+                    <tr>
+                        <td>DedicatememoryCapacity</td>
+                        <td id="t14"></td>
+                    </tr>
+                    <tr>
+                        <td style="position: relative; left: 50%; top: 10px;">
+                            <a href="readmorefullpage.html">ReadMore</a>
+                        </td>
+                    </tr>
+                </table> -->
+            </div>
+
+        </div>
+    </div>
+    <div id="footer">
+        <div id="div1">Company
+            <span id="c">
+                <li><a href="#" id="c">About Us</a></li>
+                <li><a href="#" id="c">Contact</a></li>
+                <li><a href="#" id="c">Reservation</a></li>
+                <li><a href="#" id="c">Terms & Condation</a>
+                </li>
+        </div>
+        <div id="div2">Contact
+            <span id="co">
+                <li>123 Street, New York, USA</li>
+                <li>+012 345 67890</li>
+                <li>info@example.com</li>
+            </span>
+        </div>
+        <div id="div3">Opening
+            <span id="op">
+                <li>Monday - Saturday</li>
+                <li>09AM - 09PM</li>
+                <li>Sunday</li>
+                <li>10AM - 08PM</li>
+            </span>
+        </div>
+        <div id="div4">Newsletter
+            <span id="ne"><br>Dolor amet sit justo amet elitr clita ipsum elitr est.</span>
+            <br>
+            <input type="email" placeholder="Enter the Email" id="fo">
+            <input type="submit" id="sub">
+        </div>
+    </div>
+    <script>
+        function getGreetingMessage() {
+            const now = new Date();
+            const hour = now.getHours();
+
+            let greetingMessage;
+
+            if (hour >= 5 && hour < 12) {
+                greetingMessage = "Good morning!";
+            } else if (hour >= 12 && hour < 18) {
+                greetingMessage = "Good afternoon!";
+            } else {
+                greetingMessage = "Good evening!";
+            }
+
+            return greetingMessage;
+        }
+
+        // Display the greeting message
+        const greetingDiv = document.getElementById('greeting');
+        const message = getGreetingMessage();
+        greetingDiv.textContent = message;
+    </script>
+</body>
+
+</html>

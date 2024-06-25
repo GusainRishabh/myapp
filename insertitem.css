@@ -1,0 +1,60 @@
+#header{
+    height: 80px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: white;
+}
+#main{
+    position: relative;
+    height: 70px;
+    width: 100%;
+    background-color: lightgray;
+    border: 1px solid black;
+    display: flex;
+    gap: 10px;
+
+}
+#con{
+    position: relative;
+    height: 70px;
+    width: 100%;
+    border: 1px solid white;
+}
+#maindiv{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background-image: url(img1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#small{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color: lightgray;
+    border: 1px solid black;
+    top: 30px;
+}
+#big{
+    position: relative;
+    height: 200px;
+    width: 100%;
+    border: 2px solid black;
+}
+#fo{
+    position: relative;
+    height: 2100px;
+    width: 50%;
+    border: 2px solid black;
+    margin-left:45%;
+    border:dotted;
+}
+input{
+    position: relative;
+    height: 20px;
+    width: 200px;
+    margin-left: 30px;
+    margin-top: 10px;
+}

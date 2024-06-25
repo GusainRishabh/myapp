@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylediv.css">
+    <script>
+        function view() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    const item = xhttp.responseText;
+                    const data = JSON.parse(item);
+                   text="";
+                        for (let x in data) 
+                    {
+                        text = text+"<div class='demo'><table>"
+                        text += "<tr><td>" + data[x].salesPacage + "</td><td>" + data[x].MOdelNumber + "</td><td>" + data[x].PartPacage + "</td><td>" + data[x].Seried + "</td><td>" + data[x].Color + "</td><td>" + data[x].Type + "</td><td>" + data[x].SuitableFor + "</td><td>" + data[x].BatteryCell + "</td><td>" + data[x].ProductCode + "</td></tr>";
+                        text = text+"</table></div>"
+                    }
+                   
+                    document.getElementById("demo").innerHTML = text;
+                }
+            }
+
+            xhttp.open("GET", "computer.json", true);
+
+            xhttp.send();
+        }
+    </script>
+</head>
+<body onload="view()">
+    <div class="main">
+    <div  id="demo" class="demo"></div>
+</div>
+</body>
+</html>

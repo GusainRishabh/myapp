@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?familleft: 20px;top:20px;font-size: larger;y=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="stylenew.css">
+    <title>Index page</title>
+    <script>
+        function view() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    const item = xhttp.responseText;
+                    const data = JSON.parse(item);
+                    text = "";
+                    for (let x in data) {
+                        text = text + " <form action='/updatestatus' method='post'><hr><div style='height: 180px;float: left; background-color:white;width: 100%;display:flex;'><hr><div style='float: left; height: 180px; width: 20%; background-color:white;background-image: url(mac.jpg);background-size:contain;background-repeat: no-repeat;size: full;object-fit: contain; '></div><hr><div style='width: 100%; height: 180PX;'><h2 style='background-color:white;left: 35px;position: relative; text:gray-900'>" + data[x].salesPacage + "</h2><li style='font-family: popins,sans-serif;left: 20px;top:20px;font-size: larger;'>" + data[x].MOdelNumber + "</li><li style='font-family: popins,sans-serif;left: 20px;top:20px;font-size: larger;'>" + data[x].Color + "</li><li style='font-family: popins,sans-serif;left: 20px;top:20px;font-size: larger;'>" + data[x].PartPacage + "</li><li style='font-family: popins,sans-serif;left: 20px;top:20px;font-size: larger;'>" + data[x].ProductCode + "</li><li style='font-family: popins,sans-serif;left: 20px;top:20px;font-size: larger;'>" + data[x].Seried + "</li></div><div style='width: 20%; height: 180px;float: right;background-color:white;''><h1 style='font-family: popins,sans-serif;top:20px;font-size: x-larger;' >" + data[x].ProductPrice + "</h1><h1 style='position: relative; top: 60px; left:-40px'><input type='hidden' id='t1' name='t1' value="+ data[x].Seried +"><input type='submit' value='Update Status'></h1 ></div ><hr></div><hr></form>"
+                    }
+
+                    document.getElementById("mydiv").innerHTML = text;
+                    document.getElementById("t1").value = data[0].Seried;
+                    
+                }
+            }
+
+            xhttp.open("GET", "venderorder.json", true);
+
+            xhttp.send();
+        }
+    </script>
+</head>
+
+<body onload="view()">
+
+    <nav>
+        <div class="left">
+
+            </form>
+            <div class="logo">
+                <img src="rs.png" style="border-radius: 9px;">
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="vender.html">Vender_Regration</a>
+                <a href="specficationinsert.html">specficationinsert</a>
+                <a href="loginformuser.html">User_Login</a>
+                <a href="#">Contact Us</a>
+                <a href="search.html">Searchdata</a>
+
+                <h1>
+                    <pre id="greeting" style=" margin-left: 20px;"></pre>
+                </h1>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="#"><i class='bx bx-support'></i></a>
+            <a href="#"><i class='bx bx-basket'></i></a>
+            <a href="#"><i class='bx bx-user'></i></a>
+        </div>
+    </nav>
+    <div class="main">
+        <div id="mydiv" style="width: 100%;"></div>
+    </div>
+    <div id="footer">
+        <div id="div1">Company
+            <span id="c">
+                <li><a href="#" id="c">About Us</a></li>
+                <li><a href="#" id="c">Contact</a></li>
+                <li><a href="#" id="c">Reservation</a></li>
+                <li><a href="#" id="c">Terms & Condation</a>
+                </li>
+        </div>
+        <div id="div2">Contact
+            <span id="co">
+                <li>123 Street, New York, USA</li>
+                <li>+012 345 67890</li>
+                <li>info@example.com</li>
+            </span>
+        </div>
+        <div id="div3">Opening
+            <span id="op">
+                <li>Monday - Saturday</li>
+                <li>09AM - 09PM</li>
+                <li>Sunday</li>
+                <li>10AM - 08PM</li>
+            </span>
+        </div>
+        <div id="div4">Newsletter
+            <span id="ne"><br>Dolor amet sit justo amet elitr clita ipsum elitr est.</span>
+            <br>
+            <input type="email" placeholder="Enter the Email" id="fo">
+            <input type="submit" id="sub">
+        </div>
+        <pre>
+            
+        </pre>
+</body>
+
+</html>

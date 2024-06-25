@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="stylenew.css">
+    <title>Master page</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="left">
+            <div class="logo">
+                <img src="rs.png" style="border-radius: 9px;">
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="vender.html">Vender_Regration</a>
+                <a href="specficationinsert.html">specficationinsert</a>
+                <a href="loginformuser.html">User_Login</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="#"><i class='bx bx-support'></i></a>
+            <a href="#"><i class='bx bx-basket'></i></a>
+            <a href="#"><i class='bx bx-user'></i></a>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="left1">
+            <a href="usercreateaccount.html"><i class='bx bxs-dashboard'> Create User</i></a>
+            <br>
+            <br>
+            <a href="loginuser.html"><i class='bx bx-home'> User_Login</i></a>
+            <br>
+            <br>
+            <a href="specficationinsert.html"><i class='bx bx-menu'> Add Specifications</i></a>
+            <br>
+            <br>
+            <a href="updatespecation.html"> <i class='bx bxs-key'></i> Update specfications</i></a>
+            <br>
+            <br>
+            <a href="remove.html"> <i class='bx bxs-help-circle'> Remove laptop</i></a>
+            <br>
+            <br>
+            <a href="vender.html"> <i class='bx bxs-help-circle'> Vender</i></a>
+            <br>
+            <br>
+            <a href="venderupdateprofile.html"><i class='bx bx-log-out'></i> VenderUpdate</i></a>
+            <br>
+            <br>
+            <a href="dashboard.html"> <i class='bx bxs-help-circle'> Afterlogin</i></a>
+            <br>
+            <br>
+            <a href="addnew.html"> <i class='bx bxs-help-circle'> Addnew</i></a>
+            <br>
+            <br>
+            <a href="phone.html"> <i class='bx bxs-help-circle'> Add phone</i></a>
+            <br>
+            <br>
+            <a href="updatemobile.html"> <i class='bx bxs-help-circle'> updatemobile</i></a>
+            <br>
+            <br>
+            <a href="removemobile.html"> <i class='bx bxs-help-circle'> Remove Mobile</i></a>
+            <br>
+            <br>
+            <a href="ajax.html"> <i class='bx bxs-help-circle'> Ajax</i></a>
+            <br>
+            <br>
+            <a href="sess.html"> <i class='bx bxs-help-circle'> Session</i></a>
+            <br>
+            <br>
+            </div>
+        <div class="right1">
+            <form action="/updatevenderdetails" method="post">
+                <table class="ta">
+                    <tr>
+                        <td>Name of Firm / Company</td>
+                        <td><input type="text"  name="t1" id="t1"></td>
+                    </tr>
+                    <tr>
+                        <td>Type Of Firm</td>
+                        <td>
+                            <select style="width: 200px;"  name="t2" id="t2">
+                                <option>Public Limited</option>
+                                <option>Gov Limited</option>
+                                <option>Partenership</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>Country</td>
+                        <td><select style="width: 200px;"  name="t3" id="t3">
+                                <option>India</option>
+                                <option>Nepal</option>
+                                <option>Usa</option>
+                                <option>Brazil</option>
+                                <option>Pakistan</option>
+                                <option>Afagastan</option>
+                                <option>Austrila</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>GST No.</td>
+                        <td><input type="text"  name="t4" id="t4"></td>
+                    </tr>
+                    <tr>
+                        <td>Status of Company</td>
+                        <td><select style="width: 200px;"  name="t5" id="t5">
+                                <option>Manufactures</option>
+                                <option>Deeler</option>
+                                <option>Service Provider</option>
+                                <option>stackits/Traders</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>PAN No.</td>
+                        <td><input type="text"  name="t6" id="t6"></td>
+                    </tr>
+                    <tr>
+                        <td>Sin No.</td>
+                        <td><input type="text"  name="t7" id="t7"></td>
+                    </tr>
+                    <tr>
+                        <td>Din No.</td>
+                        <td><input type="text"  name="t8" id="t8"></td>
+                    </tr>
+                    <tr>
+                        <td>Din No2.</td>
+                        <td><input type="text"  name="t9" id="t9"></td>
+                    </tr>
+                    <td><label style="font-size: x-large; margin: 20px;">Details_of_Vendor</label></td>
+                    <tr>
+                        <td>Address</td>
+                        <td><textarea style="width: 200px;"  name="t10" id="t10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td><input type="text"  name="11" id="t11"></td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td><select style="width: 200px;"  name="12" id="t12">
+                                <option>Uttarakhand</option>
+                                <option>Up</option>
+                                <option>Assam</option>
+                                <option>Mp</option>
+                                <option>Delhi</option>
+                                <option>Mumbai</option>
+                                <option>Chandigarh</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Pin</td>
+                        <td><input type="text"  name="13" id="t13"></td>
+                    </tr>
+                    <tr>
+                        <td>STD Code with Phone No</td>
+                        <td><input type="text"  name="t14" id="t14"></td>
+                    </tr>
+                    <tr>
+                        <td>Fax</td>
+                        <td><input type="text"  name="t15" id="t15"></td>
+                    </tr> 
+                    <tr>
+                        <td>Website</td>
+                        <td><input type="text"  name="t16" id="t16"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile</td>
+                        <td><input type="text"  name="t17" id="t17"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Name of Contact Person </td>
+                        <td><input type="text" name="t18" id="t18"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Designation of Contact Person</td>
+                        <td><input type="text" name="t19"  id="t19"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Is your Firm MSME </td>
+                        <td><select style="width: 200px;" name="t20" id="t20">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Brief Description of Business of your Company</td>
+                        <td><textarea style="width: 200px;" name="t21" id="t21"></textarea></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" style="width: 200px;"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="div1">Company
+            <span id="c">
+            <li><a href="#" id="c">About Us</a></li>
+            <li><a href="#" id="c">Contact</a></li>
+            <li><a href="#" id="c">Reservation</a></li>
+            <li><a href="#" id="c">Terms & Condation</a>
+            </li>
+        </div>
+        <div id="div2">Contact
+            <span id="co">
+            <li>123 Street, New York, USA</li>
+            <li>+012 345 67890</li>
+            <li>info@example.com</li>
+            </span>
+        </div>
+        <div id="div3">Opening
+            <span id="op">
+            <li>Monday - Saturday</li>
+            <li>09AM - 09PM</li>
+            <li>Sunday</li>
+            <li>10AM - 08PM</li>
+            </span>
+        </div>
+        <div id="div4">Newsletter
+            <span id="ne"><br>Dolor amet sit justo amet elitr clita ipsum elitr est.</span>
+            <br>
+            <input type="email" placeholder="Enter the Email" id="fo">
+            <input type="submit" id="sub">
+        </div>
+    </div>
+</body>
+
+</html>
