@@ -1,0 +1,248 @@
+#header{
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    background-color:rgb(29, 29, 86);
+    color: white;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+#maindiv{
+    position: relative;
+    height:900px;
+    width: 100%;
+    background-color: rgb(191, 174, 174);
+    display: flex;
+}
+#profile{
+    position: relative;
+    height:600px;
+    width: 20%;
+    border: 2px solid white;
+    margin: 2px;
+    margin-top: 100px;
+    border-radius: 9px;
+}
+#small{
+    position: relative;
+    height: 35px;
+    width: 99%;
+    font-size: large;
+    border: 2px solid white;
+    margin-left: 0;
+    border-radius: 1px;
+}
+#small:hover{
+    position: relative;
+    height: 35px;
+    width: 100;
+    background-color: aqua;
+    margin-left: 0px;
+}
+
+/*profile:hover{
+    position: relative;
+    height:600px;
+    width: 20%;
+    border: 3px solid black;
+    margin: 2px;
+    margin-top: 100px;
+    border-radius: 9px;
+    background-color: rgb(29, 29, 86);
+}*/
+#d{
+    display: inline;
+    width: 20px;
+    height: 10px;
+    font-size:x-large;
+    margin-top: 40px;
+    font-weight: bolder;
+}
+#profile2{
+    position: relative;
+    height: 600px;
+    width: 80%;
+    border: 3px solid red;
+    margin: 2px;
+    margin-top: 100px;
+    border-radius: 9px;
+}
+#pro{
+    position: relative;
+    height: 400px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border:3px solid white;
+    border-radius: 9px;
+    margin-bottom: 2%;
+    margin-top: 8%;
+    margin-left: 25%;
+}
+#prof{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 99%;
+    border: 2px solid black;
+    border-radius: 9px;
+}
+#ho1{
+    margin-left: 780px;
+    font-size: x-large;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: -50px;
+    cursor: pointer;
+}
+/*#hr1{
+    position: relative;
+    height: 2px;
+    width:100%;
+    background-color: white;
+    margin-top: -35px;
+}*/
+
+#small1{
+    position: relative;
+    height: 37px;
+    width: 100%;
+    font-size: large;
+    border: 2px solid white;
+    margin-left: 0;
+    border-radius: 1px;
+}
+a{
+    text-decoration: none;
+    margin-left: 20px;
+    color:white;
+}
+
+.b1{
+    position: relative;
+    top: 7px;
+    left: 30px;
+}
+
+#hu{
+    position: relative;
+    margin-top: 200px;
+}
+.a1:hover{
+    text-decoration: none;
+    margin-left: 20px;
+    color:wheat;
+}
+.a2{
+    text-decoration: none;
+    margin-left: 20px;
+    color:white;
+}
+a:hover{
+    text-decoration: none;
+    margin-left: 20px;
+    color: orange;
+}
+#ho{
+    margin-left: 780px;
+    font-size: xx-large;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: -50px;
+}
+h1{
+    width: 190px;
+    margin-left: 50px;
+}
+ul{
+    position: relative;
+    font-size: x-large;
+    top: -33px;
+    color: black;
+    height: 20px;
+    margin: 15px;
+}
+.b1{
+    color: black;
+    position: relative;
+    margin: 2px;
+}
+#footer{
+    height: 380px;
+    width: 100%;
+    background-color:rgb(29, 29, 86);
+    display:flex;
+}
+#div1{
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+#div2{
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+#div3{
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+#div4{
+    height: 300px;
+    width: 25%;
+    font-size: xx-large;
+    margin-top: 50px;
+    color: yellow;
+}
+#c{
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size:x-large;
+    margin-top: 40px;
+    color: white;
+}
+#co{
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size:x-large;
+    margin-top: 40px;
+    color: white;
+}
+#op{
+    display: inline;
+    width: 20px;
+    height: 20px;
+    font-size:x-large;
+    margin-top: 40px;
+    color: white;
+}
+#ne{
+    font-size: x-large;
+    color: white;
+    margin-top: 50px;
+}
+#fo{
+    font-size: large;
+    height: 40px;
+    width: 350px;
+    margin-top: 25px;
+    border-radius: 4px;
+}
+#sub{
+    background-color: rgb(71, 50, 162);
+    height: 40px;
+    width: 350px;
+    font-size: large;
+    border-radius: 3px;
+    color: black;
+    margin-left: 3px;
+}

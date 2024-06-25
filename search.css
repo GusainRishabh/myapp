@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    height: 250px;
+    width: 100%;
+    border: 2px solid red;
+}
+.part{
+    height: 250px;
+    width: 30%;
+    border: 2px solid black;
+}
+.part1{
+    display: flex;
+    height: 250px;
+    width: 100%;
+    border: 2px solid black;
+}
+.details{
+    height: 250px;
+    width: 80%;
+    border: 2px solid green;
+}
+.price{
+    height: 250px;
+    width: 30%;
+    border: 2px solid rgb(128, 0, 0);
+}

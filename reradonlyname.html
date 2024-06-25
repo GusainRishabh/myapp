@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Read JSON Data</title>
+</head>
+<body>
+
+<h1>JSON Data</h1>
+<p>The name value is: <span id="nameValue"></span></p>
+
+<script>
+  // Function to fetch and display the "name" value from JSON data
+  function fetchAndDisplayNameValue() {
+    fetch('data.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(jsonData => {
+        // Extract the "name" value from JSON data
+        const nameValue = jsonData.name;
+
+        // Display the "name" value in the HTML
+        document.getElementById('nameValue').textContent = nameValue;
+      })
+      .catch(error => {
+        console.error('There was a problem fetching the JSON file:', error);
+      });
+  }
+
+  // Call the function to fetch and display the "name" value
+  fetchAndDisplayNameValue();
+</script>
+
+</body>
+</html>
