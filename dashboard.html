@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dash.css">
+    <title>Master page</title>
+    <script>
+        function profiledata() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    const item = xhttp.responseText;
+                    const data = JSON.parse(item);
+                    document.getElementById("t1").innerHTML = data[0].userName
+                    document.getElementById("t2").innerHTML = data[0].UserId
+                    document.getElementById("b1").value = data[0].UserId
+                    document.getElementById("t3").innerHTML = data[0].LastName
+                    document.getElementById("t4").innerHTML = data[0].DateofBirth
+                    document.getElementById("t5").innerHTML = data[0].Password
+                    document.getElementById("t6").innerHTML = data[0].Address
+                    document.getElementById("t7").innerHTML = data[0].State
+                    document.getElementById("t8").innerHTML = data[0].pincode
+                    document.getElementById("t9").innerHTML = data[0].LandMark
+
+                }
+            }
+            xhttp.open("GET", "profile.json", true);
+
+            xhttp.send();
+        }
+    </script>
+
+</head>
+
+<body onload="profiledata()">
+
+    <nav>
+        <div class="left">
+            <div class="logo">
+                <img src="rs.png" style="border-radius: 9px;">
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="search.html">Search Item</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="#"><i class='bx bx-support'></i></a>
+            <a href="#"><i class='bx bx-basket'></i></a>
+            <a href="#"><i class='bx bx-user'></i></a>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="left1">
+            <div class="ad">
+                <div class="ad1">
+                    <a href="#"><i class='bx bx-home' style="margin-left: 20px;">Admin</i></a>
+                    <a href="#"><i class='bx bx-menu' style="float: right; margin-left: -20px;"></i></a>
+                </div>
+                <div class="ad2">
+                    <img src="rs.png" class="png">
+
+
+
+
+
+
+
+                    <!---------------------
+                    
+                    
+
+                    
+                    -->
+
+
+                    <div id="c1" class="rish">
+
+                    </div>
+
+
+
+                    <!---------------------
+                    
+                    
+
+                    
+                    -->
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="po">
+                <a href="editprofilecustomer.html"><i class='bx bxs-dashboard'> Edit Profile</i></a>
+                <br>
+                <br>
+                <a href="updatecustomer.html"><i class='bx bx-home'> Updtae Profile</i></a>
+                <br>
+                <br>
+                <a href="deletecustomer.html"><i class='bx bx-menu'> Delete Id</i></a>
+                <br>
+                <br>
+                <form action="/myorder" method="post">
+                    <a><i class='bx bxs-key'></i></a>
+                    <input type="text" name="t2" id="b1" hidden>
+                    <input type="submit" value="myorder" style="border: none;">
+                </form>
+                <br>
+                <br>
+                <a href="vieworderstatus.html"> <i class='bx bxs-help-circle'>View Order status</i></a>
+                <br>
+                <br>
+                <a href="#" onclick=""> <i class='bx bx-log-out'></i> Log Out</i></a>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="right1">
+            <div class="rig">
+                <div style="position: relative; left: 100px;">
+                    <form action="updatecustomer" method="post">
+                        <table>
+                            <tr>
+                                <td><label for="t1">User Name:</label></td>
+                                <td id="t1" style="position: relative; left: 30px;"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="t2">User ID:</label></td>
+                                <td id="t2"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="t3">Last Name:</label></td>
+                                <td id="t3"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="t4">Date of Birth:</label></td>
+                                <td id="t4"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="t5">Password:</label></td>
+                                <td id="t5"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="t6">Address:</label></td>
+                                <td id="t6"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="t7">State:</label></td>
+                                <td id="t7"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="t8">Pincode:</label></td>
+                                <td id="t8"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="t9">LandMark:</label></td>
+                                <td id="t9"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="div1">Company
+            <span id="c">
+                <li><a href="#" id="c">About Us</a></li>
+                <li><a href="#" id="c">Contact</a></li>
+                <li><a href="#" id="c">Reservation</a></li>
+                <li><a href="#" id="c">Terms & Condition</a></li>
+            </span>
+        </div>
+        <div id="div2">Contact
+            <span id="co">
+                <li>123 Street, New York, USA</li>
+                <li>+012 345 67890</li>
+                <li>info@example.com</li>
+            </span>
+        </div>
+        <div id="div3">Opening
+            <span id="op">
+                <li>Monday - Saturday</li>
+                <li>09AM - 09PM</li>
+                <li>Sunday</li>
+                <li>10AM - 08PM</li>
+            </span>
+        </div>
+        <div id="div4">Newsletter
+            <span id="ne"><br>Dolor amet sit justo amet elitr clita ipsum elitr est.</span>
+            <br>
+            <input type="email" placeholder="Enter the Email" id="fo">
+            <input type="submit" id="sub">
+        </div>
+        <pre>
+            <input type="text" name="c1" id="b1" hidden>
+        </pre>
+    </div>
+</body>
+
+</html>
